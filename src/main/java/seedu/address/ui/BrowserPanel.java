@@ -16,8 +16,10 @@ import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
 import seedu.address.commons.core.LogsCenter;
 import seedu.address.commons.events.ui.PersonPanelSelectionChangedEvent;
-import seedu.address.logic.YouTubeAuthorize;
+import seedu.address.logic.YouTubeAuthorizer;
 import seedu.address.model.person.ReadOnlyPerson;
+
+//@@author jhchia7
 
 /**
  * The Browser Panel of the App.
@@ -41,7 +43,7 @@ public class BrowserPanel extends UiPart<Region> {
     @FXML
     private TextFlow viewCount;
     @FXML
-    private TextFlow createDate;
+    private TextFlow videoCount;
 
 
     public BrowserPanel() {
@@ -59,7 +61,7 @@ public class BrowserPanel extends UiPart<Region> {
 
     private void loadPersonPage(ReadOnlyPerson person) throws IOException {
 
-        channel = YouTubeAuthorize.getYouTubeChannel(person.getChannelId().toString());
+        channel = YouTubeAuthorizer.getYouTubeChannel(person.getChannelId().toString(), "statistics,snippet");
 
         Text title = new Text(getChannelTitle());
         title.setFont(Font.font("Calibri", 40));
@@ -68,10 +70,16 @@ public class BrowserPanel extends UiPart<Region> {
         channelTitle.getChildren().add(title);
 
         Text description = new Text("Description:\n" + getChannelDescription());
-        description.setFont(Font.font("Calibri", 15));
+        description.setFont(Font.font("Calibri", 20));
         description.setFill(Color.WHITE);
         channelDescription.getChildren().clear();
         channelDescription.getChildren().add(description);
+
+        Text videoNumber = new Text("Videos: " + getVideoCount());
+        videoNumber.setFont(Font.font("Calibri", 25));
+        videoNumber.setFill(Color.WHITE);
+        videoCount.getChildren().clear();
+        videoCount.getChildren().add(videoNumber);
 
         Text subNumber = new Text("Subscribers: " + getSubCount());
         subNumber.setFont(Font.font("Calibri", 25));
@@ -85,15 +93,8 @@ public class BrowserPanel extends UiPart<Region> {
         viewCount.getChildren().clear();
         viewCount.getChildren().add(viewNumber);
 
-        Text date = new Text("Created: " + getCreateDate());
-        date.setFont(Font.font("Calibri", 25));
-        date.setFill(Color.WHITE);
-        createDate.getChildren().clear();
-        createDate.getChildren().add(date);
-
         Image thumbnail = getChannelThumbnail();
         channelThumbnail.setImage(thumbnail);
-
 
     }
 
@@ -109,7 +110,7 @@ public class BrowserPanel extends UiPart<Region> {
         channelDescription = null;
         subscriberCount = null;
         viewCount = null;
-        createDate = null;
+        videoCount = null;
 
     }
 
@@ -143,8 +144,8 @@ public class BrowserPanel extends UiPart<Region> {
         return formatNumber(channel.getStatistics().getViewCount().longValue());
     }
 
-    private String getCreateDate() {
-        return channel.getSnippet().getPublishedAt().toStringRfc3339();
+    private String getVideoCount() {
+        return formatNumber(channel.getStatistics().getVideoCount().longValue());
 
     }
 
