@@ -24,7 +24,7 @@ public class SampleDataUtil {
         try {
             return new Person[] {
 
-                new Person(new Name("Felix Arvid Ulf Kjellberg"), 
+                new Person(new Name("Felix Arvid Ulf Kjellberg"),
                         new Phone("87438807"),
                         new Email("pewdiepie@example.com"),
                         new Address("Blk 30 Geylang Street 29, #06-40"),
@@ -68,9 +68,9 @@ public class SampleDataUtil {
                 new Person(new Name("Emzotic"),
                         new Phone("93736283"),
                         new Email("hello@emzotic.com"),
-                        new Address("294 Burnley Rd, Cliviger, Burnley BB10 4SP, UK"), 
+                        new Address("294 Burnley Rd, Cliviger, Burnley BB10 4SP, UK"),
                         new ChannelId("UCE37328iVnqSj1OCrgrYd8w"),
-                        getTagSet("Pets", "Animals"), 
+                        getTagSet("Pets", "Animals"),
                         new Favourite("False")),
                 new Person(new Name("Coyote Peterson"),
                         new Phone("95768172"),
