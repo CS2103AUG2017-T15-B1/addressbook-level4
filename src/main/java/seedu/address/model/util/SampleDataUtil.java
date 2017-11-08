@@ -55,7 +55,7 @@ public class SampleDataUtil {
                     getTagSet("Comedy"), new Favourite("True")),
                 new Person(new Name("Paul Davids"), new Phone("19385637"), new Email("pauldavids@gmail.com"),
                     new Address("10 Westminster Cl, Accrington BB5 2TR, UK"), new ChannelId("UCEi2cifWbLHnWsqMcYqk2VQ"),
-                    getTagSet("Music"), new Favourite("False")),           
+                    getTagSet("Music"), new Favourite("False")),
                 new Person(new Name("Felix Arvid Ulf Kjellberg"),
                         new Phone("87438807"),
                         new Email("pewdiepie@example.com"),
