@@ -106,7 +106,7 @@ public class SampleDataUtil {
                         getTagSet("Gaming", "Comedy"),
                         new Favourite("false"))
             };
-        } catch (IllegalValueException e) {"),
+        } catch (IllegalValueException e) {
             throw new AssertionError("sample data cannot be invalid", e);
         }
     }
