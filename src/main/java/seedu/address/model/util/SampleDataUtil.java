@@ -42,9 +42,21 @@ public class SampleDataUtil {
                     getTagSet("classmates"), new Favourite("false")),
                 new Person(new Name("Roy Balakrishnan"), new Phone("92624417"), new Email("royb@example.com"),
                     new Address("Blk 45 Aljunied Street 85, #11-31"), new ChannelId("UCctXZhXmG-kf3tlIXgVZUlw"),
-                    getTagSet("colleagues"), new Favourite("false"))
+                    getTagSet("colleagues"), new Favourite("false")),
+                new Person(new Name("Emzotic"), new Phone("93736283"), new Email("hello@emzotic.com"),
+                    new Address("294 Burnley Rd, Cliviger, Burnley BB10 4SP, UK"), new ChannelID("UCE37328iVnqSj1OCrgrYd8w"),
+                    getTagSet("Pets", "Animals"), new Favourite("False")),
+                new Person(new Name("Coyote Peterson"), new Phone("95768172"), new Email("contact@coyotepeterson.com"),
+                    new Address("20 Maple Avenue San Pedro, CA 90731"), new ChannelID("UC6E2mP01ZLH_kbAyeazCNdg"),
+                    getTagSet("Animals"), new Favourite("True")),
+                new Person(new Name("Conan O'Brien"), new Phone("12346578"), new Email("conan@example.com"),
+                    new Address("7 W. Adams Lane San Jose, CA 95116"), new ChannelID("UCEi2cifWbLHnWsqMcYqk2VQ"),
+                    getTagSet("Comedy"), new Favourite("True")),
+                new Person(new Name("Paul Davids"), new Phone("19385637"), new Email("pauldavids@gmail.com"),
+                    new Address("10 Westminster Cl, Accrington BB5 2TR, UK"), new ChannelID("UCEi2cifWbLHnWsqMcYqk2VQ"),
+                    getTagSet("Music"), new Favourite("False"))           
             };
-        } catch (IllegalValueException e) {
+        } catch (IllegalValueException e) {"),
             throw new AssertionError("sample data cannot be invalid", e);
         }
     }
