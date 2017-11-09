@@ -70,7 +70,6 @@ image::beforesort.png[width="800"]
 _Figure 4.12.1 : Before sorting_
 image::aftersort.png[width="800"]
 _Figure 4.12.2 : After sorting_
- 
 '''
 `Justification`
 --------------
@@ -93,7 +92,7 @@ to look for all the musicians on his/her contact list.
  +
  +
 For example, a user wants to look for his/her friend in the contact list, but the list is in order of when the user added the contact. +
-He/she may spend a long time just to look for his friend's information. By sorting the name, the user would be 
+He/she may spend a long time just to look for his friend's information. By sorting the name, the user would be
 able to know exactly where the contact is located in the list.
 '''
 `Implementation`
