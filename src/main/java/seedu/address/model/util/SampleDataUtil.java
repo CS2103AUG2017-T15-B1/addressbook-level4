@@ -23,7 +23,7 @@ public class SampleDataUtil {
     public static Person[] getSamplePersons() {
         try {
             return new Person[] {
-                
+
                 new Person(new Name("Felix Arvid Ulf Kjellberg"),
                         new Phone("87438807"),
                         new Email("pewdiepie@example.com"),
