@@ -218,7 +218,7 @@ Classes used by multiple components are in the `seedu.addressbook.commons` packa
 
 This section describes some noteworthy details on how certain features are implemented.
 
-// tag::Lock Screen[]
+// tag::lock[]
 === Lock Screen
 The Lock Screen loads first before the Main Window. The status and logic of unlocking the application resides inside `LogicManager`.
 
@@ -241,6 +241,21 @@ Suppose that the user uses the application for the first time, there will be no 
 Using the same `changepwd` command the user can set the password by leaving the [old_password] field empty.
 
 Upon successful unlocking of the application, the lock screen will call `loadMainWindow()` which creates a new `MainWindow` and loads it into the `Stage`, replacing the existing `LockScreen`.
+
+==== Design Considerations
+
+**Aspect:** Implementation of LockScreen +
+**Alternative 1 (current choice):** Create a `LockScreen` class to display the lock screen. +
+**Pros:** Easy to create a custom lock screen window with its own elements. Height, width and elements inside the lock screen window (e.g. password field) can be set isolated from the `MainWindow`. +
+**Cons:** Hard for new developers to understand the template pattern. +
+
+---
+
+**Alternative 2:** Just load a lock screen over the main window. +
+**Pros:** Do not need to create a entire class. +
+**Cons:** Elements in the main window have to be hardcoded to appear or disappear when necessary. For example, the password field have to be removed after login and the other main window elements (e.g. CommandBox) have to appear. +
+There will also be restrictions to the arrangement of the elements as the FXML placeholder have to be initialised despite not being used. For example, the CommandBoxPlaceholder have to be initialised in the lock screen despite not being used.
+// end::lock[]
 
 // tag::FindEmailCommand[]
 === FindEmailCommand
@@ -295,20 +310,21 @@ public class FindEmailCommandParser {
 }
 ----
 
-// tag::FavCommand[]
+// tag::Favourites mechanism
 === FavCommand
 This enhancement allows users to add or remove people to and fro a favourites list. +
 To use this command, user just need to type in `fave <index of targeted person> <true/false>`. +
 `true` will add the targeted person to the favourites, while `false` removes the person. +
+The favourites state is a boolean variable saved in the addressbook.xml file. +
 The implementation of the fave command consists of 2 new classes, namely `FavCommand.java`, `FavCommandParser.java.` +
 Both these classes reside in the Logic component.
 
-`<CLASS DIAGRAM TO COME IN V1.4>` +
+`<CLASS DIAGRAM TO COME IN V1.6>` +
 Figure 3.3.1 +
 
 **Functions of classes in FavCommand** +
 
-**1)**	FavCommand.java: This class sets the `favourite` boolean variable in a target `Person` as either `true` or `false`. This class extends the abstract class Command. +
+**1)**	FavCommand.java: This class sets the `favourite` boolean variable in a target `Person` as either `true` or `false`. This class extends the abstract class UndoableCommand. +
 
 **2)**	FavCommandParser.java: This class parses input arguments and creates a new FavCommand object. +
 
