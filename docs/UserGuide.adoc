@@ -244,7 +244,7 @@ Selects the 1st person in the results of the `find` command. +
 This command will redirect you to third-party communication applications like Windows Mail and WhatsApp (to-be-implemented). This command will automatically fill up the information of your contact in the third party application for you. +
 Format: `send INDEX`
 
-===== Steps:
+=== Steps:
 
 *Step 1.* Type `list` to display the list of contacts in TABCC.
 
