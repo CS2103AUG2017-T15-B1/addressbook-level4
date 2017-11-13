@@ -58,7 +58,7 @@ public class PersonCard extends UiPart<Region> {
     private static String getColorForTag(String tagValue) {
         if (!tagColors.containsKey(tagValue)) {
             tagColors.put(tagValue, colors[i]);
-            i = (i + 1)%colors.length;
+            i = (i + 1) % colors.length;
         }
         return tagColors.get(tagValue);
     }
