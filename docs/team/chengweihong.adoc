@@ -79,3 +79,4 @@ To allow for more flexible commands input so that the user does not have to ente
 * Wrote additional tests to increase coverage (+1.1%) to 82.359% (Pull requests https://github.com/CS2103AUG2017-T15-B1/main/pull/117[#117])
 * Wrote additional tests to increase coverage (+1.2%) to 84.329% (Pull requests https://github.com/CS2103AUG2017-T15-B1/main/pull/147[#147])
 * Added a new UI feature which changes the color of the command word upon verification that the command exist. (Pull requests https://github.com/CS2103AUG2017-T15-B1/main/pull/125[#125])
+* Tag colors are now assigned without repetition unless the list of colors are used. (Pull requests https://)
