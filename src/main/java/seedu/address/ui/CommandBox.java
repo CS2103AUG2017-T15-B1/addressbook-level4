@@ -65,6 +65,7 @@ public class CommandBox extends UiPart<Region> {
         default:
             if (keyEvent.getCode() == KeyCode.ENTER) {
                 commandWord.setVisible(false);
+                commandTextField.setText("");
             } else {
                 if (commandText.equals("find") || commandText.equals("findemail") || commandText.equals("findtag")) {
                     handleCommandInputChanged();
