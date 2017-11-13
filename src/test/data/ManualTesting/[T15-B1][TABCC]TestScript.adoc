@@ -146,6 +146,14 @@ Restarting the app now requires you to input the password set.
 * Result display box shows: Edited Person: Felix Arvid Ulf Kjellberg Phone: 9123456 Email: pewdiepie@example.com Address: 5 Bedford Pl, Brighton BN1 2PT, UK ChannelId: UC-lHJZR3Gqxm24_Vd_AJ5Yw Tags: [Comedy][Gaming]
 ****
 
+*Command:* `edit 1 e/pewdiepie2@example.com`
+
+*Result:*
+
+****
+* Result display box shows: Edited Person: Felix Arvid Ulf Kjellberg Phone: 9123456 Email: pewdiepie@example.com Address: 5 Bedford Pl, Brighton BN1 2PT, UK ChannelId: UC-lHJZR3Gqxm24_Vd_AJ5Yw Tags: [Comedy][Gaming]
+****
+
 === Delete command
 
 *Command:* `delete 3`
@@ -259,7 +267,14 @@ send: Opens up third-party communication application with the information of the
 
 *Result:*
 ****
-* Address book has been cleared!
+* Result display shows: Address book has been cleared!
+****
+
+*Command:* cLEar
+
+*Result:*
+****
+* Result display shows: Unknown command
 ****
 
 === Undo command
