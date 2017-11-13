@@ -20,7 +20,7 @@ public class PersonCard extends UiPart<Region> {
     private static String[] colors = {"#b57be7", "#e4915a", "#acb337", "#37b346", "#62b8f9", "#f96263"};
     private static HashMap<String, String> tagColors = new HashMap<String, String>();
     private static Random random = new Random();
-    private static int i = 0;
+
     /**
      * Note: Certain keywords such as "location" and "resources" are reserved keywords in JavaFX.
      * As a consequence, UI elements' variable names cannot be set to such keywords
@@ -55,9 +55,9 @@ public class PersonCard extends UiPart<Region> {
     }
 
     private static String getColorForTag(String tagValue) {
+
         if (!tagColors.containsKey(tagValue)) {
-            tagColors.put(tagValue, colors[i]);
-            i = (i + 1) % colors.length;
+            tagColors.put(tagValue, colors[random.nextInt(colors.length)]);
         }
         return tagColors.get(tagValue);
     }
