@@ -11,6 +11,7 @@ import seedu.address.logic.commands.Command;
 import seedu.address.logic.commands.CommandResult;
 import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.logic.parser.AddressBookParser;
+import seedu.address.logic.parser.ParserUtil;
 import seedu.address.logic.parser.exceptions.ParseException;
 import seedu.address.model.Model;
 import seedu.address.model.person.ReadOnlyPerson;
@@ -46,7 +47,17 @@ public class LogicManager extends ComponentManager implements Logic {
             undoRedoStack.push(command);
             return result;
         } finally {
-            history.add(commandText);
+            try {
+                ArrayList<String> filterResult = addressBookParser.filterCommand(commandText, true);
+                if (filterResult.size() != 0) {
+                    String[] array = ParserUtil.parseByDelimiter(commandText, " ");
+                    if ((!array[0].equals("find") && !array[0].equals("findemail") && !array[0].equals("findtag"))) {
+                        history.add(commandText);
+                    }
+                }
+            } catch (IllegalValueException e) {
+                throw new CommandException("No Valid Command.");
+            }
         }
     }
 
