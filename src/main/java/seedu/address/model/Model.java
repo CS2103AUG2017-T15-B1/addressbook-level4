@@ -50,9 +50,4 @@ public interface Model {
      * @throws NullPointerException if {@code predicate} is null.
      */
     void updateFilteredPersonList(Predicate<ReadOnlyPerson> predicate);
-
-    //ObservableList<ReadOnlyPerson> sortNameDescend();
-
-    ObservableList<ReadOnlyPerson> sortNameAscend();
-
 }
