@@ -138,12 +138,6 @@ public class AddCommandTest {
         }
 
         @Override
-        public ObservableList<ReadOnlyPerson> sortNameAscend() {
-            fail("This method should not be called.");
-            return null;
-        }
-
-        @Override
         public void updateFilteredPersonList(Predicate<ReadOnlyPerson> predicate) {
             fail("This method should not be called.");
         }
