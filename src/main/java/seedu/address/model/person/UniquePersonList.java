@@ -96,14 +96,6 @@ public class UniquePersonList implements Iterable<Person> {
         setPersons(replacement);
     }
 
-    public ObservableList<ReadOnlyPerson> getSortedNameAscend() {
-        internalList.sort((person1, person2) -> {
-            int result = (person1.getName().fullName.compareToIgnoreCase(person2.getName().fullName) <= 0) ? 1 : -1;
-            return result;
-        });
-        return FXCollections.unmodifiableObservableList(mappedList);
-    }
-
     /**
      * Returns the backing list as an unmodifiable {@code ObservableList}.
      */
